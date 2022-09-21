@@ -16,12 +16,12 @@ namespace ManajemenAsetKaryawan
         
         static void Main(string[] args)
         {
-            string active = "1";
+
             string sel;
 
-            Console.Write("[1] Cek Semua Karyawan, [2] Tambah Karyawan, [3] Cek Aset ");
-            Console.Write("[4] Tambah Aset, [5] Perbarui Aset, [6] Hapus Aset ");
-            Console.Write("[7] Pinjam Aset, [8] Kembalikan Aset : ... ");
+            Console.WriteLine("[1] Cek Semua Karyawan, [2] Tambah Karyawan, [3] Cek Aset ");
+            Console.WriteLine("[4] Tambah Aset, [5] Perbarui Aset, [6] Hapus Aset ");
+            Console.WriteLine("[7] Pinjam Aset, [8] Kembalikan Aset : ... ");
             sel = Console.ReadLine();
 
             Program program = new Program();
