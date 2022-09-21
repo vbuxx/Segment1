@@ -21,7 +21,7 @@ namespace ManajemenAsetKaryawan
 
             Console.Write("[1] Cek Semua Karyawan, [2] Tambah Karyawan, [3] Cek Aset ");
             Console.Write("[4] Tambah Aset, [5] Perbarui Aset, [6] Hapus Aset ");
-            Console.Write("[7] Pinjam Aset, [9] Kembalikan Aset : ... ");
+            Console.Write("[7] Pinjam Aset, [8] Kembalikan Aset : ... ");
             sel = Console.ReadLine();
 
             Program program = new Program();
@@ -32,66 +32,62 @@ namespace ManajemenAsetKaryawan
             
             Aset newAset = new Aset();
             Karyawan newKaryawan = new Karyawan();
-            PeminjamanAset pinjamAset = new PeminjamanAset();
-            //newAset.Name = "Kulkas";
-            //newAset.Details = "Pengadaan 2022";
-            //newAset.Stock = 10;
-
-            //aset.InsertAset(newAset);
-            ////aset.DeleteAset(5);
-            ////newAset.Name = "Proyektor Acer";
-            ////program.Update(9, newAset);
-            ///
-            
-            //newKaryawan.Nama = "Joko purnomo";
-            //newKaryawan.Departemen = "Engineering";
-            //newKaryawan.Email = "asdasd@cek.me";
-            //newKaryawan.Phone = "0812345678";
-            
-            //karyawan.Insert(newKaryawan);
-            karyawan.GetAll();
-
-            
-
-            
-            pinjamAset.AsetId = 1;
-            pinjamAset.KaryawanId = 1;
-
-            //peminjaman.Peminjaman(pinjamAset);
-            peminjaman.Pengembalian("10402811");
+            PeminjamanAset newPinjamAset = new PeminjamanAset();
 
             switch (sel)
             {
                 case "1":
-                    // code block
+                    karyawan.GetAll();
 
                     break;
                 case "2":
-                    // code block
+                    Console.Write("Nama: ");
+                    newKaryawan.Nama = Console.ReadLine();
+                    Console.Write("Departemen: ");
+                    newKaryawan.Departemen = Console.ReadLine();
+                    Console.Write("Email: ");
+                    newKaryawan.Email = Console.ReadLine();
+                    Console.Write("Phone: ");
+                    newKaryawan.Phone = Console.ReadLine();
+                    karyawan.Insert(newKaryawan);
                     break;
                 case "3":
-                    // code block
+                    aset.GetAll();
                     break;
                 case "4":
-                    // code block
+                    Console.Write("Nama: ");
+                    newAset.Name = Console.ReadLine();
+                    Console.Write("Details: ");
+                    newAset.Details = Console.ReadLine();
+                    Console.Write("Stock: ");
+                    newAset.Stock = Convert.ToInt32(Console.ReadLine());
+                    aset.Insert(newAset);
                     break;
                 case "5":
-                    // code block
+                    Console.Write("Nama: ");
+                    newAset.Name = Console.ReadLine();
+                    Console.Write("Details: ");
+                    newAset.Details = Console.ReadLine();
+                    aset.Insert(newAset);
                     break;
                 case "6":
-                    // code block
+                    Console.Write("Hapus aset  dengan id: ");
+                    aset.Delete(Convert.ToInt32(Console.ReadLine()));
                     break;
                 case "7":
-                    // code block
+                    Console.Write("Aset Id: ");
+                    newPinjamAset.AsetId = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Karyawan Id: ");
+                    newPinjamAset.KaryawanId = Convert.ToInt32(Console.ReadLine());
+                    peminjaman.Peminjaman(newPinjamAset);
                     break;
                 case "8":
-                    // code block
-                    break;
-                case "9":
-                    // code block
+                    Console.Write("Masukkan kode peminjaman barang: ");
+                    peminjaman.Pengembalian(Console.ReadLine());
                     break;
                 default:
-                    // code block
+                    Console.Write("Tidak Tersedia ");
+                    
                     break;
             }
 
